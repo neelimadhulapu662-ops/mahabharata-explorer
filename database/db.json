@@ -1,0 +1,13 @@
+{
+  "characters": [
+    { "id": 1, "name": "Arjuna", "role": "Warrior", "kingdom": "Panchala" },
+    { "id": 2, "name": "Bhishma", "role": "Commander", "kingdom": "Hastinapura" }
+  ],
+  "kingdoms": [
+    { "id": 1, "name": "Hastinapura", "ruler": "Dhritarashtra" },
+    { "id": 2, "name": "Panchala", "ruler": "Drupada" }
+  ],
+  "battles": [
+    { "id": 1, "name": "Kurukshetra", "duration": "18 days", "winner": "Pandavas" }
+]
+}
