@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mahabharata Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Remove this block if you already have it in style.css */
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar { width: 220px; background: #222; color: #fff; padding: 20px; }
+        .sidebar ul { list-style: none; padding: 0; }
+        .sidebar li { padding: 10px 0; cursor: pointer; }
+        .main { flex: 1; padding: 20px; }
+        .hidden { display: none; } /* important */
+        .cards { display: flex; gap: 15px; margin-top: 15px; }
+        .card { padding: 15px; border: 1px solid #ccc; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2 class="logo">⚔ Mahabharata</h2>
+        <ul>
+            <li onclick="showSection('dashboard')">Dashboard</li>
+            <li onclick="showSection('characters')">Characters</li>
+            <li onclick="showSection('kingdoms')">Kingdoms</li>
+            <li onclick="showSection('battles')">Battles</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <div class="header">
+            <h1>Mahabharata Explorer</h1>
+        </div>
+
+        <div id="dashboard" class="section">
+            <h2>Dashboard</h2>
+            <p>Welcome to the Mahabharata Explorer. Select a section from the left to begin.</p>
+
+            <div class="cards">
+                <div class="card" onclick="showSection('characters')">
+                    <h3>Characters</h3>
+                    <p>Explore heroes and warriors</p>
+                </div>
+                <div class="card" onclick="showSection('kingdoms')">
+                    <h3>Kingdoms</h3>
+                    <p>See great kingdoms of Bharat</p>
+                </div>
+                <div class="card" onclick="showSection('battles')">
+                    <h3>Battles</h3>
+                    <p>Learn about epic battles</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="characters" class="section hidden">
+            <h2>Characters</h2>
+            <ul id="characters-list"></ul>
+        </div>
+
+        <div id="kingdoms" class="section hidden">
+            <h2>Kingdoms</h2>
+            <ul id="kingdoms-list"></ul>
+        </div>
+
+        <div id="battles" class="section hidden">
+            <h2>Battles</h2>
+            <ul id="battles-list"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(sec => sec.classList.add('hidden'));
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    // show dashboard on first load
+    showSection('dashboard');
+</script>
+
+<script src="script/characters.js"></script>
+<script src="script/kingdoms.js"></script>
+<script src="script/battles.js"></script>
+
+</body>
+</html>
