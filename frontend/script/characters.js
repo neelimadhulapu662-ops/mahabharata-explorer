@@ -5,7 +5,7 @@ fetch("http://127.0.0.1:8000/characters")
 
         data.forEach(c => {
             let li = document.createElement("li");
-            li.innerHTML = '<strong>${c.name}</strong> - ${c.role} ';
+            li.innerHTML = `<strong>${c.name}</strong> - ${c.role}`;
             ul.appendChild(li);
         });
     })
